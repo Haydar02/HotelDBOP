@@ -1,0 +1,1 @@
+﻿INSERT INTO HotelFacility VALUES(16,85,7)

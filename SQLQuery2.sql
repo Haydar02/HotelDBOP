@@ -1,0 +1,2 @@
+﻿CREATE TABLE HotelFacilitet(id int NOT NULL PRIMARY KEY, Hotel_No int NOT NULL FOREIGN KEY(Hotel_No) REFERENCES DemoHotel(Hotel_No), Facilitet_id int NOT NULL FOREIGN KEY(Facilitet_id)  REFERENCES Facilitetes(Facilitet_id) );
+ALTER TABLE DemoBooking ADD CONSTRAINT incorrect_dates CHECK ((Date_To > Date_From) AND (Date_From <= '2018-04-04'));
