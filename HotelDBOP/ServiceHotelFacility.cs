@@ -343,15 +343,16 @@ namespace HotelDBOP
                 Facility NewFacility = new Facility()
                 {
                     Facility_id = GetMaxFacilityId (connection) +1,
-                    Facility_name = "New Facility"
+                    Facility_name = "Fodbold"
                 };
 
                 CreateFacility(connection, NewFacility);
 
+
                 ListAllFacility(connection);
 
                 Facility facilityToBeUpdate= GetFacility(connection, NewFacility.Facility_id);
-                facilityToBeUpdate.Facility_name = "(Update)";
+                facilityToBeUpdate.Facility_name = "(diskotek)";
 
 
                 UpdateFacility(connection, facilityToBeUpdate);
@@ -359,7 +360,7 @@ namespace HotelDBOP
                 ListAllFacility(connection);
                  Facility facilityToDelete= GetFacility(connection,facilityToBeUpdate.Facility_id);
 
-                DeleteFacility(connection, facilityToDelete.Facility_id);
+                DeleteFacility(connection, facilityToDelete.Facility_id= 9);
                
                 ListAllFacility(connection);
 
@@ -367,6 +368,8 @@ namespace HotelDBOP
                 Console.WriteLine();
 
                 ListHotelFacility(connection);
+
+
                 HotelFacility NewHotelFacility = new HotelFacility()
                 {
                     id = GetMaxHotelFacility(connection)+1,
@@ -374,20 +377,25 @@ namespace HotelDBOP
                     Hotel_No = GetMaxHotelId (connection)
                 };
 
-                CreateHotelFacility(connection,NewHotelFacility);               
+                CreateHotelFacility(connection,NewHotelFacility) ; 
+                
+
                 ListHotelFacility(connection);
 
+
                 HotelFacility hotelFacilityToBeUpdate = GetHotelFacility(connection, NewHotelFacility.id);
-                hotelFacilityToBeUpdate.Facility_id += facilityToBeUpdate.Facility_id ;
-                hotelFacilityToBeUpdate.Hotel_No += GetMaxHotelId(connection);
+                hotelFacilityToBeUpdate.Facility_id += facilityToBeUpdate.Facility_id  ;
+                hotelFacilityToBeUpdate.Hotel_No += GetMaxHotelId(connection) ;
 
                 UpdateHotelFacility(connection, NewHotelFacility);
 
                 ListHotelFacility(connection);
+
                HotelFacility hotelFacilityToBeDelete= GetHotelFacility(connection, NewHotelFacility.id);
                
                 
-                DeleteHotelFacility(connection, hotelFacilityToBeDelete.id);
+                DeleteHotelFacility(connection, hotelFacilityToBeDelete.id = 22);
+
                ListHotelFacility (connection);
             }
         }
